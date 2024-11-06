@@ -1,0 +1,54 @@
+:root {
+  --usek-indigo-blue: #033f78;
+  --usek-turquoise: #0098d8;
+  --usek-grey: #7c7c7b;
+  --usek-crimson: #9b0e27;
+  --usek-wine: #722e37;
+}
+body.indigo-dark-theme {
+  --usek-crimson: #660000;
+}
+
+/* MAIN CLASSES */
+.bg-usek-indigo {
+  background-color: var(--usek-indigo-blue);
+}
+.bg-usek-turquoise {
+  background-color: var(--usek-turquoise);
+}
+.bg-usek-grey {
+  background-color: var(--usek-grey);
+}
+.bg-usek-wine {
+  background-color: var(--usek-wine);
+}
+
+.text-white {
+  color: white;
+}
+
+/* CHANGE IMAGE TO BLACK AND WHITE */
+.black-white-logo {
+  filter: invert(100%) grayscale(100%) contrast(200%);
+}
+
+.footer-red-band {
+  background-color: var(--usek-crimson);
+  min-height: 20px;
+}
+
+/* MAIN HEADER BUTTONS AND LAYOUT  */
+.theme-toggle-button .switch .slider {
+  background-color: var(--usek-turquoise) !important;
+}
+body.indigo-dark-theme .theme-toggle-button .switch input:checked + .slider {
+  background-color: var(--usek-crimson) !important; /* Color for dark mode */
+}
+.register-btn {
+  border: solid 1px #9b0e27 !important;
+  color: #9b0e27 !important;
+}
+.register-btn:hover {
+  background-color: #9b0e27 !important;
+  color: white !important;
+}
