@@ -1,7 +1,6 @@
 import React, { useEffect } from 'react';
 import Cookies from 'universal-cookie';
 
-import Footer from '@edly-io/indigo-frontend-component-footer';
 import { getConfig } from '@edx/frontend-platform';
 import { DIRECT_PLUGIN, PLUGIN_OPERATIONS } from '@openedx/frontend-plugin-framework';
 
@@ -38,21 +37,22 @@ const themePluginSlot = {
   keepDefault: false,
   plugins: [
     {
-      op: PLUGIN_OPERATIONS.Insert,
-      widget: {
-        id: 'default_contents',
-        type: DIRECT_PLUGIN,
-        priority: 1,
-        RenderWidget: <Footer />,
-      },
+      op: PLUGIN_OPERATIONS.Hide,
+      widgetId: 'default_contents',
     },
     {
       op: PLUGIN_OPERATIONS.Insert,
       widget: {
-        id: 'read_theme_cookie',
+        id: 'custom_footer',
         type: DIRECT_PLUGIN,
-        priority: 2,
-        RenderWidget: AddDarkTheme,
+        RenderWidget: () => (
+          <div class="wrapper wrapper-footer p-4">
+            <footer id="footer" class="tutor-container text-left">
+              <h5>EITS-USEK</h5>
+              <span class="copyright-site">Copyrights ©2024. All Rights Reserved.</span>
+            </footer>
+          </div>
+        ),
       },
     },
   ],
